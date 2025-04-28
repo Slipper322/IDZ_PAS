@@ -1,0 +1,121 @@
+﻿<Window x:Class="ComputerClubDiplom.Views.EditTariffsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComputerClubDiplom.Views"
+        mc:Ignorable="d"
+        Title="Редактирование тарифов" Height="450" Width="800">
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<!-- Заголовок -->
+			<RowDefinition Height="Auto"/>
+			<!-- Таблица -->
+			<RowDefinition Height="*"/>
+			<!-- Кнопка "Добавить тариф" -->
+		</Grid.RowDefinitions>
+
+		<!-- Заголовок -->
+		<TextBlock Grid.Row="0" Text="Редактирование тарифов для Стандарт зоны" 
+                   FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+		<!-- Кнопка "Добавить тариф" -->
+		<Button Grid.Row="1" Content="Добавить тариф" Width="150" Height="30" 
+				HorizontalAlignment="Left" Margin="0,10,0,10" 
+				Background="#F0F0F0" BorderBrush="#D0D0D0"/>
+		<!-- Таблица тарифов -->
+		<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+			<Grid Background="#F0F0F0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<!-- Название тарифа -->
+					<ColumnDefinition Width="100"/>
+					<!-- Длительность -->
+					<ColumnDefinition Width="100"/>
+					<!-- Стоимость -->
+					<ColumnDefinition Width="40"/>
+					<!-- Редактировать -->
+					<ColumnDefinition Width="40"/>
+					<!-- Удалить -->
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="30"/>
+					<!-- Заголовки -->
+					<RowDefinition Height="30"/>
+					<!-- Тариф 1 -->
+					<RowDefinition Height="30"/>
+					<!-- Тариф 2 -->
+					<RowDefinition Height="30"/>
+					<!-- Тариф 3 -->
+					<RowDefinition Height="30"/>
+					<!-- Тариф 4 -->
+				</Grid.RowDefinitions>
+
+				<!-- Заголовки -->
+				<TextBlock Grid.Column="0" Grid.Row="0" Text="Название тарифа" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+				<TextBlock Grid.Column="1" Grid.Row="0" Text="Длительность" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+				<TextBlock Grid.Column="2" Grid.Row="0" Text="Стоимость" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+
+				<!-- Тариф 1 -->
+				<TextBlock Grid.Column="0" Grid.Row="1" Text="По часовой" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Grid.Row="1" Text="1 час" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Grid.Row="1" Text="100 руб." 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Button Grid.Column="3" Grid.Row="1" Width="30" Height="30" Margin="5,0" ToolTip="Редактировать">
+					<Image Source="../Assets/pencil_icon.png" Width="20" Height="20"/>
+				</Button>
+				<Button Grid.Column="4" Grid.Row="1" Width="30" Height="30" Margin="5,0" ToolTip="Удалить">
+					<Image Source="../Assets/delete_icon.png" Width="20" Height="20"/>
+				</Button>
+
+				<!-- Тариф 2 -->
+				<TextBlock Grid.Column="0" Grid.Row="2" Text="Пакет 3часа" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Grid.Row="2" Text="3 часа" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Grid.Row="2" Text="250 руб." 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Button Grid.Column="3" Grid.Row="2" Width="30" Height="30" Margin="5,0" ToolTip="Редактировать">
+					<Image Source="../Assets/pencil_icon.png" Width="20" Height="20"/>
+				</Button>
+				<Button Grid.Column="4" Grid.Row="2" Width="30" Height="30" Margin="5,0" ToolTip="Удалить">
+					<Image Source="../Assets/delete_icon.png" Width="20" Height="20"/>
+				</Button>
+
+				<!-- Тариф 3 -->
+				<TextBlock Grid.Column="0" Grid.Row="3" Text="Пакет 5часов" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Grid.Row="3" Text="5 часов" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Grid.Row="3" Text="400 руб." 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Button Grid.Column="3" Grid.Row="3" Width="30" Height="30" Margin="5,0" ToolTip="Редактировать">
+					<Image Source="../Assets/pencil_icon.png" Width="20" Height="20"/>
+				</Button>
+				<Button Grid.Column="4" Grid.Row="3" Width="30" Height="30" Margin="5,0" ToolTip="Удалить">
+					<Image Source="../Assets/delete_icon.png" Width="20" Height="20"/>
+				</Button>
+				<!-- Тариф 3 -->
+				<TextBlock Grid.Column="0" Grid.Row="4" Text="Пакет ночь" 
+							HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="1" Grid.Row="4" Text="10 часов" 
+							HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<TextBlock Grid.Column="2" Grid.Row="4" Text="750 руб." 
+							HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				<Button Grid.Column="3" Grid.Row="4" Width="30" Height="30" Margin="5,0" ToolTip="Редактировать">
+					<Image Source="../Assets/pencil_icon.png" Width="20" Height="20"/>
+				</Button>
+				<Button Grid.Column="4" Grid.Row="4" Width="30" Height="30" Margin="5,0" ToolTip="Удалить">
+					<Image Source="../Assets/delete_icon.png" Width="20" Height="20"/>
+				</Button>
+			</Grid>
+		</ScrollViewer>
+
+		
+	</Grid>
+</Window>

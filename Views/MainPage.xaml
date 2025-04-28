@@ -1,0 +1,50 @@
+﻿<Page x:Class="ComputerClubDiplom.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComputerClubDiplom.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+	<Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Управление бронями -->
+		<Border Grid.Column="0" Grid.Row="0" BorderBrush="#D0D0D0" BorderThickness="1" Margin="5">
+			<StackPanel Margin="10">
+				<TextBlock Text="Управление бронями" FontWeight="Bold" Margin="0,0,0,5"/>
+				<TextBlock Text="Выставить бронь"/>
+				<TextBlock Text="Изменить"/>
+				<TextBlock Text="Отменить бронь"/>
+			</StackPanel>
+		</Border>
+
+		<!-- Карта клуба -->
+		<Border Grid.Column="1" Grid.Row="0" BorderBrush="#D0D0D0" BorderThickness="1" Margin="5">
+			<StackPanel Margin="10">
+				<TextBlock Text="Карта клуба" FontWeight="Bold" Margin="0,0,0,5"/>
+				<TextBlock Text="Редактировать карту"/>
+			</StackPanel>
+		</Border>
+
+		<!-- Настройки -->
+		<Border Grid.Column="0" Grid.Row="1" BorderBrush="#D0D0D0" BorderThickness="1" Margin="5">
+			<StackPanel Margin="10">
+				<TextBlock Text="Настройки" FontWeight="Bold" Margin="0,0,0,5"/>
+				<TextBlock Text="Все настройки"/>
+			</StackPanel>
+		</Border>
+
+		<!-- Пустая ячейка для будущего расширения -->
+		<Border Grid.Column="1" Grid.Row="1" BorderBrush="#D0D0D0" BorderThickness="1" Margin="5"/>
+	</Grid>
+</Page>

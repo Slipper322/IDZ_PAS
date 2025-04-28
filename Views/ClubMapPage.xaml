@@ -1,0 +1,193 @@
+﻿<Page x:Class="ComputerClubDiplom.Views.ClubMapPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComputerClubDiplom.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClubMapPage">
+
+	<!-- Стили -->
+	<Page.Resources>
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="#F0F0F0"/>
+			<Setter Property="BorderBrush" Value="#D0D0D0"/>
+			<Setter Property="Padding" Value="5"/>
+		</Style>
+		<Style x:Key="ComputerCircle" TargetType="Ellipse">
+			<Setter Property="Width" Value="24"/>
+			<Setter Property="Height" Value="24"/>
+			<Setter Property="StrokeThickness" Value="2"/>
+		</Style>
+	</Page.Resources>
+
+	<Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150"/>
+			<!-- Статусы -->
+			<ColumnDefinition Width="*"/>
+			<!-- Карта -->
+			<ColumnDefinition Width="200"/>
+			<!-- Информация -->
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<!-- Переключатели режимов -->
+			<RowDefinition Height="*"/>
+			<!-- Основная часть -->
+		</Grid.RowDefinitions>
+
+		<!-- Переключатели режимов -->
+		<StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+			<RadioButton Content="Режим просмотра" Margin="5" IsChecked="True"/>
+			<RadioButton Content="Режим редактирования" Margin="5"/>
+		</StackPanel>
+
+		<!-- Загруженность и статусы -->
+		<StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
+			<TextBlock Text="Загруженность: 10/16" FontWeight="Bold" Margin="0,0,0,10"/>
+			<ListBox Height="Auto" MaxHeight="400">
+				<ListBoxItem Content="ПК 1 - Включен" Foreground="Green"/>
+				<ListBoxItem Content="ПК 2 - Занят" Foreground="Red"/>
+				<ListBoxItem Content="ПК 3 - Забронирован" Foreground="Orange"/>
+				<ListBoxItem Content="ПК 4 - В обслуживании" Foreground="Gray"/>
+				<ListBoxItem Content="ПК 5 - Выключен" Foreground="Black"/>
+				<!-- Остальные ПК для примера -->
+			</ListBox>
+		</StackPanel>
+
+		<!-- Карта клуба -->
+		<Grid Grid.Column="1" Grid.Row="1" Margin="5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid Background="#F0F0F0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+					<ColumnDefinition></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+				</Grid.RowDefinitions>
+				<!-- Компьютер 1 - Включен -->
+				<Grid Grid.Row="0" Grid.Column="0">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Green" ToolTip="ПК 1 - Включен"/>
+					<TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+
+				<!-- Компьютер 2 - Занят -->
+				<Grid Grid.Row="0" Grid.Column="1">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Red" ToolTip="ПК 2 - Занят"/>
+					<TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+
+				<!-- Компьютер 3 - Забронирован -->
+				<Grid Grid.Row="0" Grid.Column="2">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Green" ToolTip="ПК 3 - Забронирован"/>
+					<TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<Ellipse Canvas.Left="15" Canvas.Top="-5" Width="8" Height="8" Fill="Orange" Margin="18,0,2,20"/>
+				</Grid>
+
+				<!-- Компьютер 4 - В обслуживании -->
+				<Grid Grid.Row="0" Grid.Column="3">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Gray" ToolTip="ПК 4 - В обслуживании"/>
+					<TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<Ellipse Canvas.Left="15" Canvas.Top="-5" Width="8" Height="8" Fill="Blue" Margin="18,0,2,20"/>
+				</Grid>
+
+				<!-- Компьютер 5 - Выключен -->
+				<Grid Grid.Row="0" Grid.Column="4">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<!-- Добавьте остальные компьютеры до 16 по аналогии -->
+				<Grid Grid.Row="2" Grid.Column="0">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="2" Grid.Column="1">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="2" Grid.Column="2">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="2" Grid.Column="3">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="2" Grid.Column="4">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+
+				<Grid Grid.Row="4" Grid.Column="4">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="5" Grid.Column="4">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="6" Grid.Column="4">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="4" Grid.Column="6">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="5" Grid.Column="6">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+				<Grid Grid.Row="6" Grid.Column="6">
+					<Ellipse Style="{StaticResource ComputerCircle}" Stroke="Black" ToolTip="ПК 5 - Выключен"/>
+					<TextBlock Text="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Grid>
+			</Grid>
+		</Grid>
+
+		<!-- Информация о выбранном компьютере -->
+		<Border Grid.Column="2" Grid.Row="1" BorderBrush="#D0D0D0" BorderThickness="1" Margin="5">
+			<StackPanel Margin="10">
+				<TextBlock Text="ПК 1" FontWeight="Bold" Margin="0,0,0,5"/>
+				<TextBlock Text="Клиент: +7 (XXX) XXX-XX-XX" Margin="0,0,0,5"/>
+				<TextBlock Text="Тариф: Стандарт" Margin="0,0,0,5"/>
+				<TextBlock Text="Осталось времени: 1ч" Margin="0,0,0,5"/>
+				<TextBlock Text="Баланс: 250" Margin="0,0,0,5"/>
+			</StackPanel>
+		</Border>
+	</Grid>
+</Page>
